@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${DATASOURCE_USR:urusso}
+    password: ${DATASOURCE_PWD:urussopwd}
+    driver-class-name: ${DATASOURCE_DRIVER:org.postgresql.Driver}
+    hikari:
+      maximum-pool-size: '5'
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: ${DATASOURCE_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/master.yml
+    contexts: dev
+    drop-first: false
+    default-schema: public
+
+cors:
+  url: ${CORS_URL:http://localhost:4200}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    operationsSorter: method
+    tagsSorter: alpha
+
+swagger:
+  version: 1.0
+  title: Spring Boot Example
+  description: Swagger for the Spring Boot Example application
