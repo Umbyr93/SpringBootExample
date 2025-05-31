@@ -13,4 +13,9 @@ public class UserEntity {
 
     private String username;
     private String password;
+    private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "DEFAULT_PAYMENT_ID")
+    private PaymentMethodEntity defaultPaymentMethod;
 }

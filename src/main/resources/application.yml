@@ -6,6 +6,7 @@ spring:
     driver-class-name: ${DATASOURCE_DRIVER:org.postgresql.Driver}
     hikari:
       maximum-pool-size: '5'
+      schema: public
   jpa:
     hibernate:
       ddl-auto: validate
@@ -35,3 +36,16 @@ swagger:
   version: 1.0
   title: Spring Boot Example
   description: Swagger for the Spring Boot Example application
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+security:
+  jwt:
+    secret-key: ${JWT_SECRET_KEY:87a2198dc40441e38f7650ae755bbc2d464648e98096447dbe4fd924f202c7ac}
+    expiration-time: ${JWT_EXPIRATION_TIME:3600000}
+
+cache:
+  jwt-ttl: 55 #minutes

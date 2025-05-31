@@ -1,3 +1,5 @@
 databaseChangeLog:
   - includeAll:
-      path: db/changelog/changesets/base
+      path: db/changelog/changesets/000
+  - includeAll:
+      path: db/changelog/changesets/001

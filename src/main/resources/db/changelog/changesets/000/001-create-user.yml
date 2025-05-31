@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 001
+      id: 001-base
       author: urusso
       changes:
         - createTable:
@@ -19,6 +19,6 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: password
-                  type: varchar(20)
+                  type: varchar(150)
                   constraints:
                     nullable: false
